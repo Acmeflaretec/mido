@@ -55,12 +55,9 @@ const Footer = () => {
           </Grid>
         </Grid>
         <Divider sx={{ my: 4, backgroundColor: 'rgba(255, 255, 255, 0.1)' }} />
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
           <Typography variant="body2" sx={{ mb: { xs: 2, md: 0 } }}>
             © {new Date().getFullYear()} Mido Tech Mattress. All rights reserved.
-          </Typography>
-          <Typography variant="body2" sx={{ mb: { xs: 2, md: 0 } }}>
-            Designed by <Link href="https://www.acmeflare.in/" target="_blank" rel="noopener noreferrer" underline="hover">Acmeflare</Link>
           </Typography>
         </Box>
       </Container>
