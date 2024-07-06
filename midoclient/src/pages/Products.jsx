@@ -1,12 +1,14 @@
 import React from 'react';
 import { Box, Container, Grid, Typography, Button, Card, CardMedia, CardContent, CardActions } from '@mui/material';
 import { motion } from 'framer-motion';
+import { WhatsApp } from '@mui/icons-material'; // Import WhatsApp icon
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 
 const allProducts = [
   {
     id: 1,
+    category: "Memory Foam",
     name: "Comfort Plus Mattress",
     image: "aboutbanner.png",
     description: "Experience ultimate comfort with our premium memory foam mattress. Designed to contour to your body, providing optimal support for a restful night's sleep. The Comfort Plus Mattress features advanced cooling technology to regulate your body temperature throughout the night, ensuring you wake up feeling refreshed and rejuvenated.",
@@ -14,18 +16,21 @@ const allProducts = [
   },
   {
     id: 2,
+    category: "Orthopedic",
     name: "Ortho Support Mattress",
     image: "aboutbanner.png",
     description: "Our orthopedic mattress offers exceptional support for your back and joints. Perfect for those seeking a firmer sleep surface, the Ortho Support Mattress is designed to promote proper spinal alignment and reduce pressure points. Its high-density foam core provides long-lasting durability and consistent support night after night.",
     features: ["High-density foam", "Reinforced edges", "Breathable fabric"]
   },
   {
-    id: 2,
-    name: "Ortho Support Mattress",
+    id: 1,
+    category: "Memory Foam",
+    name: "Comfort Plus Mattress",
     image: "aboutbanner.png",
-    description: "Our orthopedic mattress offers exceptional support for your back and joints. Perfect for those seeking a firmer sleep surface, the Ortho Support Mattress is designed to promote proper spinal alignment and reduce pressure points. Its high-density foam core provides long-lasting durability and consistent support night after night.",
-    features: ["High-density foam", "Reinforced edges", "Breathable fabric"]
+    description: "Experience ultimate comfort with our premium memory foam mattress. Designed to contour to your body, providing optimal support for a restful night's sleep. The Comfort Plus Mattress features advanced cooling technology to regulate your body temperature throughout the night, ensuring you wake up feeling refreshed and rejuvenated.",
+    features: ["Memory foam", "Cooling gel", "Hypoallergenic cover"]
   },
+
   // Add more products as needed
 ];
 
@@ -76,8 +81,11 @@ const Products = () => {
                     />
                   </motion.div>
                   <CardContent sx={{ flexGrow: 1, padding: '24px' }}>
-                    <Typography gutterBottom variant="h5" component="h2" sx={{ mb: 2 }}>
+                    <Typography gutterBottom variant="h5" component="h2" sx={{ mb: 1 }}>
                       {product.name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                      <strong>Category:</strong> {product.category}
                     </Typography>
                     <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
                       {product.description}
@@ -96,6 +104,7 @@ const Products = () => {
                       variant="contained"
                       color="primary"
                       onClick={() => handleEnquire(product)}
+                      startIcon={<WhatsApp />} // WhatsApp icon added here
                       sx={{
                         py: 1.5,
                         fontSize: '1rem',
