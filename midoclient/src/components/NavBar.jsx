@@ -54,7 +54,7 @@ const NavBar = () => {
         <AppBar position="static" elevation={0} sx={{ bgcolor: '#ffffff' }}>
           <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Typography variant="h6" component="div" sx={{ color: '#333', fontWeight: 600 }}>
-              Mido Mattress
+            <Link to={'/'} style={{ textDecoration: 'none', color: '#333' }}>Mido Mattress</Link>
             </Typography>
             {isMobile ? (
               <IconButton
