@@ -25,7 +25,7 @@ const FormBox = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   '& > *': {
-    margin: theme.spacing(1), // Adjusted spacing here
+    margin: theme.spacing(5), 
   },
 }));
 
@@ -52,9 +52,9 @@ function ContactUs() {
                   Get in Touch
                 </Typography>
                 <FormBox>
-                  <TextField label="Name" variant="outlined"  fullWidth />
-                  <TextField label="Email" variant="outlined" fullWidth />
-                  <TextField label="Message" variant="outlined" fullWidth multiline rows={4} />
+                  <TextField label="Name" variant="outlined" style={{marginBottom:'15px'}}  fullWidth />
+                  <TextField label="Email" variant="outlined" style={{marginBottom:'15px'}}  fullWidth />
+                  <TextField label="Message" variant="outlined" style={{marginBottom:'15px'}}  fullWidth multiline rows={4} />
                   <Button variant="contained" color="primary">Send Message</Button>
                 </FormBox>
               </CardContent>
