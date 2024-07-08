@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Grid, Typography, Card, CardContent, CardMedia, Button, Avatar, Chip } from '@mui/material';
+import { Box, Container, Grid, Typography, Card, CardContent, CardMedia, Button, Avatar, Chip, useTheme ,useMediaQuery} from '@mui/material';
 import { styled } from '@mui/system';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import PersonIcon from '@mui/icons-material/Person';
@@ -63,10 +63,12 @@ const blogs = [
 ];
 
 const Blog = () => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <StyledBox>
       <Container maxWidth="lg">
-        <Typography variant="h3" component="h1" align="center" gutterBottom sx={{ mb: 6, fontWeight: 'bold', color: '#ED1C24' }}>
+        <Typography variant={isMobile ? 'h4' : 'h3'} component="h1" align="center" gutterBottom sx={{ mb: 6, fontWeight: 'bold', color: '#ED1C24' }}>
           Latest Insights
         </Typography>
         <Grid container spacing={4}>

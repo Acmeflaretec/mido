@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Typography, Grid } from '@mui/material';
+import { Box, Container, Typography, Grid, useTheme,useMediaQuery } from '@mui/material';
 import { keyframes } from '@mui/system';
 
 const fadeIn = keyframes`
@@ -25,6 +25,8 @@ const slideIn = keyframes`
 `;
 
 const WhyChooseUs = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const reasons = [
     {
       title: "Premium Quality Mattresses",
@@ -55,7 +57,7 @@ const WhyChooseUs = () => {
       }}
     >
       <Container maxWidth="lg">
-        <Typography variant="h3" gutterBottom sx={{ fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color:'#D2232A'}}>
+        <Typography variant={isMobile ? 'h4' : 'h3'} gutterBottom sx={{ fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color:'#D2232A'}}>
           Why Choose Us?
         </Typography>
         <Box sx={{ position: 'relative' }}>
@@ -108,7 +110,7 @@ const WhyChooseUs = () => {
                       },
                     }}
                   >
-                    <Typography variant="h5" sx={{ fontWeight: 600, marginBottom: '1rem', color: '#D2232A' }}>
+                    <Typography variant="h6" sx={{ fontWeight: 600, marginBottom: '1rem', color: '#D2232A' }}>
                       {reason.title}
                     </Typography>
                     <Typography variant="body1" sx={{ color: '#34495e' }}>

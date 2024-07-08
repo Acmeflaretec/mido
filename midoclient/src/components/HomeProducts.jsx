@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Container, Grid, Typography, Button, Card, CardMedia, CardContent } from '@mui/material';
+import { Box, Container, Grid, Typography, Button, Card, CardMedia, CardContent, useTheme ,useMediaQuery} from '@mui/material';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,6 +13,8 @@ const allProducts = [
 ];
 
 const HomeProducts = () => {
+  const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [visibleProducts, setVisibleProducts] = useState(3);
   const navigate = useNavigate();
 
@@ -41,7 +43,7 @@ const HomeProducts = () => {
   return (
     <Box sx={{ py: 8, backgroundColor: '#F9F9F9' }}>
       <Container maxWidth="lg">
-        <Typography variant="h3" component="h2" align="center" gutterBottom sx={{ mb: 6, fontWeight: 'bold', color: '#D2232A' }}>
+        <Typography variant={isMobile ? 'h4' : 'h3'}  component="h2" align="center" gutterBottom sx={{ mb: 6, fontWeight: 'bold', color: '#D2232A' }}>
           Discover Our Featured Products
         </Typography>
         <motion.div

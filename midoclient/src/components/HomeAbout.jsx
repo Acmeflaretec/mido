@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, Container, Grid, Typography } from '@mui/material';
+import { Box, Button, Container, Grid, Typography, useTheme, useMediaQuery} from '@mui/material';
 import { keyframes } from '@mui/system';
 import { Link } from 'react-router-dom';
 
@@ -15,6 +15,8 @@ const fadeIn = keyframes`
 `;
 
 const HomeAbout = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <Box
       sx={{
@@ -62,7 +64,7 @@ const HomeAbout = () => {
           </Grid>
           <Grid item xs={12} md={6}>
             <Box sx={{ animation: `${fadeIn} 1s ease-out 0.3s both` }}>
-              <Typography variant="h3" gutterBottom sx={{ color: '#D2232A', fontWeight: 700, mb: 3 }}>
+              <Typography variant={isMobile ? 'h4' : 'h3'}  gutterBottom sx={{ color: '#D2232A', fontWeight: 700, mb: 3 , textAlign:'center' }}>
                 Who Are We?
               </Typography>
               <Typography variant="body1" sx={{ color: '#333333', mb: 3, lineHeight: 1.8 }}>

@@ -147,7 +147,7 @@ const HomeBanner = () => {
           {isMobile && <ImageComponent />}
           <Box sx={{ width: { xs: '100%', md: '50%' }, zIndex: 2, textAlign: { xs: 'center', md: 'left' } }}>
             <Typography
-              variant={isMobile ? 'h3' : 'h1'}
+              variant={isMobile ? 'h4' : 'h1'}
               sx={{
                 color: '#D2232A',
                 fontWeight: 900,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Typography, Grid, Card, CardContent, CardMedia } from '@mui/material';
+import { Box, Container, Typography, Grid, Card, CardContent, CardMedia, useTheme ,useMediaQuery } from '@mui/material';
 import { styled } from '@mui/system';
 
 const StyledBox = styled(Box)(({ theme }) => ({
@@ -23,6 +23,8 @@ const StyledCardMedia = styled(CardMedia)({
 });
 
 const Special = () => {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const features = [
     {
       title: 'Innovative Design',
@@ -44,7 +46,7 @@ const Special = () => {
   return (
     <StyledBox>
       <Container maxWidth="lg">
-        <Typography variant="h3" component="h1" align="center" gutterBottom sx={{ mb: 6, fontWeight: 'bold', color: '#D2232A' }}>
+        <Typography variant={isMobile ? 'h4' : 'h3'} component="h1" align="center" gutterBottom sx={{ mb: 6, fontWeight: 'bold', color: '#D2232A' }}>
           What Makes Us Special
         </Typography>
         <Grid container spacing={4}>

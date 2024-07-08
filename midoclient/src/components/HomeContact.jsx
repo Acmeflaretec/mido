@@ -1,9 +1,11 @@
 import React from 'react';
-import { Box, Container, Typography, Button } from '@mui/material';
+import { Box, Container, Typography, Button, useTheme, useMediaQuery } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const HomeContact = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const navigate = useNavigate();
 
   const handleContactClick = () => {
@@ -14,7 +16,7 @@ const HomeContact = () => {
     <Box sx={{ py: 8, backgroundColor: '#FFF0E5', textAlign: 'center' }}>
       <Container maxWidth="md">
         <Typography 
-          variant="h3" 
+          variant={isMobile ? 'h4' : 'h3'}  
           component="h2" 
           gutterBottom 
           sx={{ color: '#D2232A', fontWeight: 700, mb: 3 }}
