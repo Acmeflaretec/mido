@@ -6,6 +6,8 @@ import WhyChooseUs from '../components/WhyChooseUs'
 import Footer from '../components/Footer'
 import HomeProducts from '../components/HomeProducts'
 import HomeContact from '../components/HomeContact'
+import Blog from '../components/Blog'
+import Special from '../components/Special'
 
 function Home() {
   return (
@@ -15,6 +17,8 @@ function Home() {
         <HomeAbout/>
         <WhyChooseUs/>
         <HomeProducts/>
+        <Blog/>
+        <Special/>
         <HomeContact/>
         <Footer/>
     </div>

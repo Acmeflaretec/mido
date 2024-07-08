@@ -47,7 +47,7 @@ const WhyChooseUs = () => {
   return (
     <Box
       sx={{
-        background: '#f8fafc',
+        background: '#FFF0E5', // Lightened red for background
         color: '#2c3e50',
         padding: '6rem 0',
         position: 'relative',
@@ -102,13 +102,13 @@ const WhyChooseUs = () => {
                         [index % 2 === 0 ? 'right' : 'left']: '-10px',
                         width: '20px',
                         height: '20px',
-                        backgroundColor: '#3498db',
+                        backgroundColor: '#D2232A', // Primary red
                         borderRadius: '50%',
                         transform: 'translateY(-50%)',
                       },
                     }}
                   >
-                    <Typography variant="h5" sx={{ fontWeight: 600, marginBottom: '1rem', color: '#3498db' }}>
+                    <Typography variant="h5" sx={{ fontWeight: 600, marginBottom: '1rem', color: '#D2232A' }}>
                       {reason.title}
                     </Typography>
                     <Typography variant="body1" sx={{ color: '#34495e' }}>

@@ -19,7 +19,7 @@ const HomeAbout = () => {
     <Box
       sx={{
         padding: { xs: '3rem 1rem', md: '5rem 2rem' },
-        backgroundColor: '#f8fafc',
+        backgroundColor: '#F9F9F9', // Lightened background color
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -38,46 +38,46 @@ const HomeAbout = () => {
                 '&:hover': {
                   transform: 'scale(1.02)',
                 },
+                '&::before': {
+                  content: '""',
+                  position: 'absolute',
+                  top: '-10%',
+                  left: '-10%',
+                  width: '120%',
+                  height: '120%',
+                  borderRadius: '50%',
+                  backgroundColor: '#D2232A', // Primary red background
+                  opacity: 0.1,
+                  zIndex: -1,
+                  transform: 'rotate(-45deg)',
+                },
               }}
             >
               <img
-                src="homebanner.png"
+                src="pillowtop.png" // Updated image path
                 alt="Company Image"
-                style={{ width: '100%', height: 'auto', display: 'block' }}
-              />
-              <Box
-                sx={{
-                  position: 'absolute',
-                  top: '-20%',
-                  left: '-20%',
-                  width: '140%',
-                  height: '140%',
-                  borderRadius: '50%',
-                  backgroundColor: '#3498db',
-                  opacity: 0.1,
-                  zIndex: -1,
-                  transform: 'rotate(-30deg)',
-                }}
+                style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '1rem' }}
               />
             </Box>
           </Grid>
           <Grid item xs={12} md={6}>
             <Box sx={{ animation: `${fadeIn} 1s ease-out 0.3s both` }}>
-              <Typography variant="h3" gutterBottom sx={{ color: '#2c3e50', fontWeight: 700, mb: 3 }}>
+              <Typography variant="h3" gutterBottom sx={{ color: '#D2232A', fontWeight: 700, mb: 3 }}>
                 Who Are We?
               </Typography>
-              <Typography variant="body1" sx={{ color: '#34495e', mb: 3, lineHeight: 1.8 }}>
+              <Typography variant="body1" sx={{ color: '#333333', mb: 3, lineHeight: 1.8 }}>
                 Mido Tech Mattress, founded in 2016, is on a mission to revolutionize sleep. We are dedicated to crafting premium mattresses and sleep products that enhance comfort and elevate quality of life.
               </Typography>
-              <Typography variant="body1" sx={{ color: '#34495e', mb: 3, lineHeight: 1.8 }}>
+              <Typography variant="body1" sx={{ color: '#333333', mb: 3, lineHeight: 1.8 }}>
                 Our passion for innovation extends beyond mattresses, encompassing confectionery and furniture products under various brands. We proudly serve both local and international markets, constantly pushing the boundaries of comfort and design.
               </Typography>
               <Button
                 component={Link}
                 to="/about"
                 variant="contained"
-                color="primary"
                 sx={{
+                  backgroundColor: '#C3A15C', // Secondary gold for button
+                  color: '#FFFFFF', // White for button text
                   borderRadius: '30px',
                   padding: '0.75rem 2rem',
                   fontSize: '1rem',
@@ -85,6 +85,7 @@ const HomeAbout = () => {
                   textTransform: 'none',
                   transition: 'all 0.3s ease-out',
                   '&:hover': {
+                    backgroundColor: '#A77E40', // Darker gold on hover
                     transform: 'translateY(-2px)',
                     boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
                   },

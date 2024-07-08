@@ -3,15 +3,13 @@ import { Box, Container, Grid, Typography, Button, Card, CardMedia, CardContent 
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
-// Assume this comes from an API or database
 const allProducts = [
-  { id: 1, name: "Comfort Plus Mattress", image: "homebanner.png" },
-  { id: 2, name: "Ortho Support Mattress", image: "aboutbanner.png" },
-  { id: 3, name: "Cloud Nine Pillow Top", image: "homebanner.png" },
+  { id: 1, name: "Crystel", image: "crystel.png" },
+  { id: 2, name: "Crystel Eurotop", image: "eurotop.png" },
+  { id: 3, name: "Crystel pillow top", image: "pillowtop.png" },
   { id: 4, name: "Eco-Friendly Latex Mattress", image: "/images/mattress4.jpg" },
   { id: 5, name: "Memory Foam Deluxe", image: "/images/mattress5.jpg" },
   { id: 6, name: "Hybrid Cooling Mattress", image: "/images/mattress6.jpg" },
-  // Add more products as needed
 ];
 
 const HomeProducts = () => {
@@ -27,24 +25,24 @@ const HomeProducts = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
-      opacity: 1
-    }
+      opacity: 1,
+    },
   };
 
   return (
-    <Box sx={{ py: 8, backgroundColor: '#f5f5f5' }}>
+    <Box sx={{ py: 8, backgroundColor: '#F9F9F9' }}>
       <Container maxWidth="lg">
-        <Typography variant="h3" component="h2" align="center" gutterBottom sx={{ mb: 6, fontWeight: 'bold' }}>
-          Our Featured Products
+        <Typography variant="h3" component="h2" align="center" gutterBottom sx={{ mb: 6, fontWeight: 'bold', color: '#333333' }}>
+          Discover Our Featured Products
         </Typography>
         <motion.div
           variants={containerVariants}
@@ -60,23 +58,32 @@ const HomeProducts = () => {
                       height: '100%', 
                       display: 'flex', 
                       flexDirection: 'column',
+                      borderRadius: 8,
+                      boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
                       transition: '0.3s',
                       '&:hover': {
                         transform: 'translateY(-5px)',
-                        boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+                        boxShadow: '0 8px 30px rgba(0,0,0,0.2)',
                       }
                     }}
                   >
                     <CardMedia
                       component="img"
-                      height="200"
+                      height="300"
                       image={product.image}
                       alt={product.name}
+                      sx={{ objectFit: 'cover', borderTopLeftRadius: 8, borderTopRightRadius: 8 }}
                     />
-                    <CardContent sx={{ flexGrow: 1 }}>
-                      <Typography gutterBottom variant="h6" component="h3" align="center">
+                    <CardContent sx={{ flexGrow: 1, textAlign: 'center', py: 2 }}>
+                      <Typography gutterBottom variant="h6" component="h3" sx={{ color: '#333333', fontWeight: 'bold', mb: 1 }}>
                         {product.name}
                       </Typography>
+                      <Button 
+                        variant="outlined" 
+                        sx={{ borderRadius: '999px', textTransform: 'none', fontWeight: 'bold', borderColor: '#C3A15C', color: '#C3A15C', '&:hover': { backgroundColor: '#C3A15C', color: '#FFFFFF' } }}
+                      >
+                        View Details
+                      </Button>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -91,14 +98,18 @@ const HomeProducts = () => {
           >
             <Button 
               variant="contained" 
-              color="primary" 
               size="large" 
               onClick={handleLoadMore}
               sx={{
                 borderRadius: '30px',
-                padding: '10px 30px',
+                padding: '12px 36px',
                 fontWeight: 'bold',
                 textTransform: 'none',
+                backgroundColor: '#D2232A',
+                color: '#FFFFFF',
+                '&:hover': {
+                  backgroundColor: '#A60F1A',
+                },
               }}
             >
               View All Products

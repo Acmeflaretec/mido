@@ -1,16 +1,22 @@
 import React from 'react';
 import { Box, Typography, Container, useMediaQuery, useTheme } from '@mui/material';
 import { keyframes } from '@mui/system';
+import { Link } from 'react-router-dom';
 
-// Define animations
+// Refined animations
 const float = keyframes`
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-10px) scale(1.01); }
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
 `;
 
 const fadeInSlideUp = keyframes`
-  from { opacity: 0; transform: translateY(50px); }
+  from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+`;
+
+const shimmer = keyframes`
+  0% { background-position: -500px 0; }
+  100% { background-position: 500px 0; }
 `;
 
 const HomeBanner = () => {
@@ -26,13 +32,27 @@ const HomeBanner = () => {
         '&::before': {
           content: '""',
           position: 'absolute',
-          top: '-50%',
-          left: '-50%',
-          width: '200%',
-          height: '200%',
+          top: '-20%',
+          left: '-20%',
+          width: '140%',
+          height: '140%',
           borderRadius: '50%',
-          backgroundColor: '#e8f4fc',
+          background: 'radial-gradient(circle, #f8e9e8 0%, #FFF0E5 70%)',
           zIndex: 1,
+          opacity: 0.8,
+        },
+        '&::after': {
+          content: '""',
+          position: 'absolute',
+          top: '10%',
+          left: '10%',
+          width: '80%',
+          height: '80%',
+          backgroundImage: 'linear-gradient(45deg, #D2232A11 25%, transparent 25%, transparent 75%, #D2232A11 75%, #D2232A11)',
+          backgroundSize: '40px 40px',
+          zIndex: 0,
+          opacity: 0.05,
+          animation: `${shimmer} 60s linear infinite`,
         },
       }}
     >
@@ -51,6 +71,7 @@ const HomeBanner = () => {
             width: '100%',
             height: 'auto',
             transition: 'transform 0.3s ease-out',
+            filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.1))',
           }}
         />
       </Box>
@@ -61,11 +82,24 @@ const HomeBanner = () => {
     <Box
       sx={{
         minHeight: '100vh',
-        backgroundColor: '#f0f4f8',
+        background: 'linear-gradient(135deg, #FFF0E5 0%, #FFF8E1 100%)',
         display: 'flex',
         alignItems: 'center',
         overflow: 'hidden',
         py: { xs: 4, md: 0 },
+        position: 'relative',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: 'radial-gradient(#D2232A08 1px, transparent 1px), radial-gradient(#C3A15C08 1px, transparent 1px)',
+          backgroundSize: '30px 30px',
+          backgroundPosition: '0 0, 15px 15px',
+          opacity: 0.3,
+        },
       }}
     >
       <Container maxWidth="lg">
@@ -81,12 +115,31 @@ const HomeBanner = () => {
           {isMobile && <ImageComponent />}
           <Box sx={{ width: { xs: '100%', md: '50%' }, zIndex: 2, textAlign: { xs: 'center', md: 'left' } }}>
             <Typography
-              variant={isMobile ? 'h3' : 'h2'}
+              variant={isMobile ? 'h3' : 'h1'}
               sx={{
-                color: '#2c3e50',
-                fontWeight: 'bold',
+                color: '#D2232A',
+                fontWeight: 900,
                 mb: 2,
                 animation: `${fadeInSlideUp} 1s ease-out`,
+                textShadow: '1px 1px 2px rgba(0,0,0,0.05)',
+                letterSpacing: '-1px',
+                position: 'relative',
+                display: 'inline-block',
+                '&::after': {
+                  content: '""',
+                  position: 'absolute',
+                  bottom: '-10px',
+                  left: 0,
+                  width: '100%',
+                  height: '3px',
+                  background: 'linear-gradient(90deg, #D2232A, #C3A15C)',
+                  transformOrigin: 'left',
+                  transform: 'scaleX(0)',
+                  animation: 'expandWidth 1s ease-out 0.5s forwards',
+                },
+                '@keyframes expandWidth': {
+                  to: { transform: 'scaleX(1)' },
+                },
               }}
             >
               Dream in Comfort
@@ -94,29 +147,49 @@ const HomeBanner = () => {
             <Typography
               variant={isMobile ? 'body1' : 'h5'}
               sx={{
-                color: '#34495e',
+                color: '#333333',
                 mb: 4,
                 animation: `${fadeInSlideUp} 1s ease-out 0.3s both`,
+                fontWeight: 500,
+                lineHeight: 1.6,
               }}
             >
               Experience the luxury of perfect sleep with our premium mattresses
             </Typography>
             <Box
-              component="button"
+              component={Link}
+              to="/about"
               sx={{
-                backgroundColor: '#3498db',
-                color: 'white',
-                border: 'none',
-                padding: '12px 24px',
+                display: 'inline-block',
+                backgroundColor: '#C3A15C',
+                color: '#FFFFFF',
+                padding: '15px 30px',
                 fontSize: { xs: '1rem', md: '1.1rem' },
                 fontWeight: 'bold',
-                borderRadius: '30px',
-                cursor: 'pointer',
+                borderRadius: '50px',
+                textDecoration: 'none',
                 transition: 'all 0.3s ease',
+                position: 'relative',
+                overflow: 'hidden',
                 '&:hover': {
-                  backgroundColor: '#2980b9',
+                  backgroundColor: '#A77E40',
                   transform: 'translateY(-3px)',
-                  boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
+                  boxShadow: '0 10px 20px rgba(0,0,0,0.1)',
+                },
+                '&::before': {
+                  content: '""',
+                  position: 'absolute',
+                  top: '-50%',
+                  left: '-50%',
+                  width: '200%',
+                  height: '200%',
+                  background: 'radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%)',
+                  transition: 'all 0.5s ease',
+                  opacity: 0,
+                },
+                '&:hover::before': {
+                  opacity: 1,
+                  transform: 'scale(1.2)',
                 },
                 animation: `${fadeInSlideUp} 1s ease-out 0.6s both`,
               }}

@@ -6,10 +6,10 @@ const Footer = () => {
     <Box
       component="footer"
       sx={{
-        backgroundColor: '#1c2331',
-        color: '#ffffff',
+        backgroundColor: '#D2232A', // Dark red background
+        color: '#FFFFFF', // White text color for better contrast
         py: 6,
-        borderTop: '1px solid #2d3748',
+        borderTop: '1px solid #2d3748', // Darkened border top for contrast
       }}
     >
       <Container maxWidth="lg">
@@ -26,16 +26,16 @@ const Footer = () => {
             <Typography variant="h6" gutterBottom>
               Quick Links
             </Typography>
-            <Link href="/" color="inherit" underline="none" sx={{ display: 'block', mb: 1, '&:hover': { color: '#64ffda' } }}>
+            <Link href="/" color="inherit" underline="none" sx={{ display: 'block', mb: 1, '&:hover': { color: '#FF6B6B' } }}>
               Home
             </Link>
-            <Link href="/products" color="inherit" underline="none" sx={{ display: 'block', mb: 1, '&:hover': { color: '#64ffda' } }}>
+            <Link href="/products" color="inherit" underline="none" sx={{ display: 'block', mb: 1, '&:hover': { color: '#FF6B6B' } }}>
               Our Products
             </Link>
-            <Link href="/about" color="inherit" underline="none" sx={{ display: 'block', mb: 1, '&:hover': { color: '#64ffda' } }}>
+            <Link href="/about" color="inherit" underline="none" sx={{ display: 'block', mb: 1, '&:hover': { color: '#FF6B6B' } }}>
               About Us
             </Link>
-            <Link href="/contact" color="inherit" underline="none" sx={{ display: 'block', '&:hover': { color: '#64ffda' } }}>
+            <Link href="/contact" color="inherit" underline="none" sx={{ display: 'block', '&:hover': { color: '#FF6B6B' } }}>
               Contact Us
             </Link>
           </Grid>
@@ -54,9 +54,9 @@ const Footer = () => {
             </Typography>
           </Grid>
         </Grid>
-        <Divider sx={{ my: 4, backgroundColor: 'rgba(255, 255, 255, 0.1)' }} />
+        <Divider sx={{ my: 4, backgroundColor: '#FFFFFF' }} /> {/* White divider for contrast */}
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
-          <Typography variant="body2" sx={{ mb: { xs: 2, md: 0 } }}>
+          <Typography variant="body2" align="center" sx={{ mb: { xs: 2, md: 0 } }}>
             © {new Date().getFullYear()} Mido Tech Mattress. All rights reserved.
           </Typography>
         </Box>
