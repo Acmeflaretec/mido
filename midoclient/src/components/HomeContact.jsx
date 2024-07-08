@@ -14,10 +14,10 @@ const HomeContact = () => {
     <Box sx={{ py: 8, backgroundColor: '#FFF0E5', textAlign: 'center' }}>
       <Container maxWidth="md">
         <Typography 
-          variant="h4" 
+          variant="h2" 
           component="h2" 
           gutterBottom 
-          sx={{ fontWeight: 'bold', mb: 4, color: '#D2232A' }}
+          sx={{ color: '#D2232A', fontWeight: 700, mb: 3 }}
         >
           Get in Touch with Us!
         </Typography>

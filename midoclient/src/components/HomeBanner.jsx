@@ -3,7 +3,7 @@ import { Box, Typography, Container, useMediaQuery, useTheme } from '@mui/materi
 import { keyframes } from '@mui/system';
 import { Link } from 'react-router-dom';
 
-// Refined animations
+// Existing animations
 const float = keyframes`
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-10px) rotate(1deg); }
@@ -19,15 +19,40 @@ const shimmer = keyframes`
   100% { background-position: 500px 0; }
 `;
 
+// New blob animation
+const blobAnimation = keyframes`
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  50% { border-radius: 50% 60% 30% 60% / 30% 70% 50% 60%; }
+  75% { border-radius: 70% 30% 50% 50% / 40% 40% 60% 50%; }
+`;
+
 const HomeBanner = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+  const BlobComponent = ({ color, size, top, left, animationDuration }) => (
+    <Box
+      sx={{
+        position: 'absolute',
+        width: size,
+        height: size,
+        backgroundColor: color,
+        borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%',
+        animation: `${blobAnimation} ${animationDuration} ease-in-out infinite`,
+        top,
+        left,
+        opacity: 0.1,
+        zIndex: 1,
+      }}
+    />
+  );
 
   const ImageComponent = () => (
     <Box
       sx={{
         width: '100%',
-        maxWidth: { xs: '400px', md: '600px' },
+        maxWidth: { xs: '500px', md: '700px' }, // Adjust max-width for different screen sizes
         position: 'relative',
         '&::before': {
           content: '""',
@@ -37,7 +62,6 @@ const HomeBanner = () => {
           width: '140%',
           height: '140%',
           borderRadius: '50%',
-          background: 'radial-gradient(circle, #f8e9e8 0%, #FFF0E5 70%)',
           zIndex: 1,
           opacity: 0.8,
         },
@@ -62,14 +86,15 @@ const HomeBanner = () => {
           zIndex: 2,
           animation: `${float} 6s ease-in-out infinite`,
           transformOrigin: 'center center',
+          maxWidth: '100%', // Ensure image doesn't exceed its container
         }}
       >
         <img
           src="homebanner.png"
           alt="Luxurious Mattress"
           style={{
-            width: '100%',
-            height: 'auto',
+            width: '100%', // Ensure image takes full width of its container
+            height: 'auto', // Maintain aspect ratio
             transition: 'transform 0.3s ease-out',
             filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.1))',
           }}
@@ -77,6 +102,7 @@ const HomeBanner = () => {
       </Box>
     </Box>
   );
+  
 
   return (
     <Box
@@ -102,6 +128,10 @@ const HomeBanner = () => {
         },
       }}
     >
+      <BlobComponent color="#D2232A" size="300px" top="-10%" left="-10%" animationDuration="20s" />
+      <BlobComponent color="#C3A15C" size="250px" top="60%" left="80%" animationDuration="18s" />
+      <BlobComponent color="#FFD700" size="200px" top="40%" left="-5%" animationDuration="22s" />
+
       <Container maxWidth="lg">
         <Box
           sx={{
@@ -110,6 +140,8 @@ const HomeBanner = () => {
             alignItems: 'center',
             justifyContent: 'space-between',
             gap: { xs: 4, md: 0 },
+            position: 'relative',
+            zIndex: 2,
           }}
         >
           {isMobile && <ImageComponent />}
@@ -200,6 +232,34 @@ const HomeBanner = () => {
           {!isMobile && <ImageComponent />}
         </Box>
       </Container>
+
+      {/* Decorative elements */}
+      <Box
+        sx={{
+          position: 'absolute',
+          bottom: '5%',
+          left: '5%',
+          width: '50px',
+          height: '50px',
+          borderRadius: '50%',
+          background: 'linear-gradient(45deg, #D2232A, #C3A15C)',
+          opacity: 0.2,
+          animation: `${float} 4s ease-in-out infinite`,
+        }}
+      />
+      <Box
+        sx={{
+          position: 'absolute',
+          top: '10%',
+          right: '10%',
+          width: '30px',
+          height: '30px',
+          transform: 'rotate(45deg)',
+          background: '#FFD700',
+          opacity: 0.15,
+          animation: `${float} 5s ease-in-out infinite`,
+        }}
+      />
     </Box>
   );
 };

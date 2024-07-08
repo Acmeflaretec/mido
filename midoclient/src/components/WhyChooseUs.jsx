@@ -55,7 +55,7 @@ const WhyChooseUs = () => {
       }}
     >
       <Container maxWidth="lg">
-        <Typography variant="h3" gutterBottom sx={{ fontWeight: 700, marginBottom: '3rem', textAlign: 'center' }}>
+        <Typography variant="h2" gutterBottom sx={{ fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color:'#D2232A'}}>
           Why Choose Us?
         </Typography>
         <Box sx={{ position: 'relative' }}>

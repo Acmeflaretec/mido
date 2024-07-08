@@ -48,21 +48,21 @@ function ContactUs() {
   return (
     <div>
       <NavBar />
-      <StyledContainer maxWidth="lg" style={{marginBottom:'30px'}}>
-        <Typography variant="h3" component="h1" gutterBottom align="center" sx={{ color: '#D2232A', fontWeight: 'bold' }}>
+      <StyledContainer maxWidth="lg" style={{ marginBottom: '30px' }}>
+        <Typography variant="h3" component="h1" gutterBottom align="center" sx={{ color: '#D2232A', fontWeight: 'bold', marginBottom: '60px' }}>
           Contact Us
         </Typography>
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <StyledCard>
               <CardContent>
-                <Typography variant="h5" component="h2" gutterBottom>
+                <Typography variant="h5" component="h2" gutterBottom style={{ borderBottom: '3px solid #D2232A', paddingBottom: '10px', marginBottom:'20px' }}>
                   Get in Touch
                 </Typography>
                 <FormBox>
-                  <TextField label="Name" variant="outlined" fullWidth style={{marginBottom:'15px'}} />
-                  <TextField label="Email" variant="outlined" fullWidth style={{marginBottom:'15px'}}  />
-                  <TextField label="Message" variant="outlined" multiline rows={4} fullWidth style={{marginBottom:'15px'}}  />
+                  <TextField label="Name" variant="outlined" fullWidth style={{ marginBottom: '15px' }} />
+                  <TextField label="Email" variant="outlined" fullWidth style={{ marginBottom: '15px' }} />
+                  <TextField label="Message" variant="outlined" multiline rows={4} fullWidth style={{ marginBottom: '15px' }} />
                   <CustomButton variant="contained" fullWidth>
                     Send Message
                   </CustomButton>
@@ -73,7 +73,7 @@ function ContactUs() {
           <Grid item xs={12} md={6}>
             <StyledCard>
               <CardContent>
-                <Typography variant="h5" component="h2" gutterBottom>
+                <Typography variant="h5" component="h2" gutterBottom style={{ borderBottom: '3px solid #D2232A', paddingBottom: '10px', marginBottom:'20px' }}>
                   Contact Information
                 </Typography>
                 <ContactInfoBox>

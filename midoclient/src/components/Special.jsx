@@ -44,7 +44,7 @@ const Special = () => {
   return (
     <StyledBox>
       <Container maxWidth="lg">
-        <Typography variant="h2" component="h1" align="center" gutterBottom sx={{ mb: 6, fontWeight: 'bold', color: '#2c3e50' }}>
+        <Typography variant="h2" component="h1" align="center" gutterBottom sx={{ mb: 6, fontWeight: 'bold', color: '#D2232A' }}>
           What Makes Us Special
         </Typography>
         <Grid container spacing={4}>

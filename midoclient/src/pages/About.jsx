@@ -48,7 +48,7 @@ function About() {
     <div>
       <NavBar />
       <StyledContainer maxWidth="lg" style={{marginBottom:'30px'}}>
-        <Typography variant="h3" component="h1" gutterBottom align="center" sx={{ color: '#D2232A' }}>
+        <Typography variant="h3" component="h1" gutterBottom align="center" sx={{ color: '#D2232A', fontWeight:'bold'}}>
           About Us {/* Primary red for headline */}
         </Typography>
         <Grid container spacing={4} alignItems="center">

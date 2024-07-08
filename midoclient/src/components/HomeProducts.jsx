@@ -41,7 +41,7 @@ const HomeProducts = () => {
   return (
     <Box sx={{ py: 8, backgroundColor: '#F9F9F9' }}>
       <Container maxWidth="lg">
-        <Typography variant="h3" component="h2" align="center" gutterBottom sx={{ mb: 6, fontWeight: 'bold', color: '#333333' }}>
+        <Typography variant="h2" component="h2" align="center" gutterBottom sx={{ mb: 6, fontWeight: 'bold', color: '#D2232A' }}>
           Discover Our Featured Products
         </Typography>
         <motion.div

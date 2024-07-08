@@ -69,7 +69,7 @@ const Products = () => {
       <NavBar />
       <Box sx={{ py: 8, backgroundColor: '#FFF0E5' }}>
         <Container maxWidth="lg">
-          <Typography variant="h2" component="h1" align="center" gutterBottom sx={{ mb: 6, color: '#D2232A', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>
+          <Typography variant="h3" component="h1" align="center" gutterBottom sx={{ mb: 6, color: '#D2232A', fontWeight: 'bold', letterSpacing: '1px' }}>
             Our Premium Mattresses
           </Typography>
           <Grid container spacing={4}>

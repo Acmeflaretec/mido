@@ -62,7 +62,7 @@ const HomeAbout = () => {
           </Grid>
           <Grid item xs={12} md={6}>
             <Box sx={{ animation: `${fadeIn} 1s ease-out 0.3s both` }}>
-              <Typography variant="h3" gutterBottom sx={{ color: '#D2232A', fontWeight: 700, mb: 3 }}>
+              <Typography variant="h2" gutterBottom sx={{ color: '#D2232A', fontWeight: 700, mb: 3 }}>
                 Who Are We?
               </Typography>
               <Typography variant="body1" sx={{ color: '#333333', mb: 3, lineHeight: 1.8 }}>
