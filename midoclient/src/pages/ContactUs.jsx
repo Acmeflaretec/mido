@@ -78,13 +78,13 @@ function ContactUs() {
                 </Typography>
                 <ContactInfoBox>
                   <Typography variant="body1" paragraph>
-                    <strong>Address:</strong> 123 Street Name, City, Country
+                    <strong>Address:</strong> Jaihind General Trading Company <br /> malappuram,kerala india- 679582
                   </Typography>
                   <Typography variant="body1" paragraph>
-                    <strong>Phone:</strong> +1 234 567 890
+                    <strong>Phone:</strong> +91 9048256666
                   </Typography>
                   <Typography variant="body1" paragraph>
-                    <strong>Email:</strong> info@example.com
+                    <strong>Email:</strong> Jaihindcompany@gmail.com
                   </Typography>
                 </ContactInfoBox>
               </CardContent>

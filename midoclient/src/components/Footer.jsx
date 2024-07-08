@@ -44,13 +44,14 @@ const Footer = () => {
               Contact Information
             </Typography>
             <Typography variant="body2" sx={{ mb: 1 }}>
-              123 Sleep Street, Comfort City, 12345
+            Jaihind General Trading Company
+            malappuram,kerala india- 679582
             </Typography>
             <Typography variant="body2" sx={{ mb: 1 }}>
-              Phone: (123) 456-7890
+              Phone: +91 9048256666
             </Typography>
             <Typography variant="body2">
-              Email: info@midotechmattress.com
+              Email: Jaihindcompany@gmail.com
             </Typography>
           </Grid>
         </Grid>
