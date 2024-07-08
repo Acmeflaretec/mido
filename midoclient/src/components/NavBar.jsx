@@ -51,10 +51,19 @@ const NavBar = () => {
   return (
     <>
       <Container>
-        <AppBar position="static" elevation={0} sx={{ bgcolor: '#ffffff' }}>
+        <AppBar position="static" elevation={0} sx={{ bgcolor: '#D2232A' }}>
           <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Typography variant="h6" component="div" sx={{ color: '#333', fontWeight: 600 }}>
-            <Link to={'/'} style={{ textDecoration: 'none', color: '#333' }}>Mido Mattress</Link>
+            <Typography variant="h6" component="div" sx={{ color: '#FFFFFF', fontWeight: 600 }}>
+              <Link to={'/'} style={{ textDecoration: 'none', color: '#FFFFFF' }}>
+                <img
+                  src="logo.png"
+                  alt="Logo"
+                  style={{
+                    height: isMobile ? '50px' : '90px', 
+                    transition: 'height 0.3s ease-in-out', 
+                  }}
+                />
+              </Link>
             </Typography>
             {isMobile ? (
               <IconButton
@@ -62,7 +71,7 @@ const NavBar = () => {
                 aria-label="open drawer"
                 edge="end"
                 onClick={handleDrawerToggle}
-                sx={{ color: '#333' }}
+                sx={{ color: '#FFFFFF' }}
               >
                 <MenuIcon />
               </IconButton>
@@ -75,9 +84,9 @@ const NavBar = () => {
                       component={Link}
                       to={item.path}
                       sx={{
-                        color: '#333',
+                        color: '#FFFFFF',
                         '&:hover': {
-                          bgcolor: '#f0f0f0',
+                          bgcolor: '#C3A15C',
                         },
                         textTransform: 'none',
                         fontSize: '1rem',
@@ -91,13 +100,13 @@ const NavBar = () => {
             )}
             {!isMobile && (
               <Box sx={{ display: 'flex', gap: 2 }}>
-                <IconButton sx={{ color: '#333' }} component="a" href="https://facebook.com" target="_blank">
+                <IconButton sx={{ color: '#FFFFFF' }} component="a" href="https://facebook.com" target="_blank">
                   <FacebookIcon />
                 </IconButton>
-                <IconButton sx={{ color: '#333' }} component="a" href="https://instagram.com" target="_blank">
+                <IconButton sx={{ color: '#FFFFFF' }} component="a" href="https://instagram.com" target="_blank">
                   <InstagramIcon />
                 </IconButton>
-                <IconButton sx={{ color: '#333' }} component="a" href="https://twitter.com" target="_blank">
+                <IconButton sx={{ color: '#FFFFFF' }} component="a" href="https://twitter.com" target="_blank">
                   <TwitterIcon />
                 </IconButton>
               </Box>
