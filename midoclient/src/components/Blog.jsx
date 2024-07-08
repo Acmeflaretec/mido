@@ -66,7 +66,7 @@ const Blog = () => {
   return (
     <StyledBox>
       <Container maxWidth="lg">
-        <Typography variant="h2" component="h1" align="center" gutterBottom sx={{ mb: 6, fontWeight: 'bold', color: '#ED1C24' }}>
+        <Typography variant="h3" component="h1" align="center" gutterBottom sx={{ mb: 6, fontWeight: 'bold', color: '#ED1C24' }}>
           Latest Insights
         </Typography>
         <Grid container spacing={4}>

@@ -65,7 +65,7 @@ function About() {
           <Grid item xs={12} md={6}>
             <StyledCard>
               <CardContent>
-                <Typography variant="h5" component="h2" gutterBottom sx={{ color: '#D2232A' }}>
+                <Typography variant="h5" component="h2" gutterBottom sx={{ color: '#D2232A' }} style={{ padding: '10px 0', fontWeight:'bold' }}                >
                   Welcome to Mido Tech Mattress {/* Primary red for subheading */}
                 </Typography>
                 <Typography variant="body1" paragraph sx={{ color: '#333333' }}>
