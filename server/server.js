@@ -9,7 +9,7 @@ async function server() {
 
     app.listen(process.env.PORT_LOCAL, () => console.log(`Listening on port ${process.env.PORT_LOCAL}`));
     connect(`${mongoUrl}/${process.env.DATABASE_NAME}`,
-      {
+      {  
         useNewUrlParser: true,
         useUnifiedTopology: true
       }

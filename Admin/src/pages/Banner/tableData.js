@@ -14,7 +14,7 @@ import logoXD from "assets/images/small-logos/logo-xd.svg";
 
 function Completion({ value, color }) {
   return (
-    <Box display="flex" alignItems="center">
+    <Box display="flex" alignItems="center">    
       <Typography variant="caption" color="text" fontWeight="medium">
         {value}%&nbsp;
       </Typography>
