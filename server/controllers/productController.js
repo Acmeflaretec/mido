@@ -6,11 +6,10 @@ const getProducts = async (req, res) => {
     const { page = 1, limit = 6, sortField, sortOrder, search, category,
       priceGreaterThan, priceLessThan, priceMin, priceMax, sortDiscount, sortDiscountGreaterThan } = req.query;
 
-    // Convert page and limit to integers
+
     const pageNumber = parseInt(page, 10) || 1;
     const limitNumber = parseInt(limit, 10) || 10;
-// console.log('lim',limit)
-console.log('lim n',limitNumber)
+    console.log('lim n', limitNumber)
 
     // Construct the base query
     const query = {};
@@ -62,14 +61,14 @@ console.log('lim n',limitNumber)
 
     // Find products based on the constructed query
     const totalProducts = await Product.countDocuments(query);
-    console.log('tpro',totalProducts)
+    console.log('tpro', totalProducts)
     const products = await Product.find(query)
       .collation({ locale: 'en' }) // Enable case-insensitive search
       .sort(sortOptions)
       .skip((pageNumber - 1) * limitNumber)
       .limit(limitNumber);
     //const data = await Product.find()
-    res.status(200).json({ data:products })
+    res.status(200).json({ data: products })
   } catch (error) {
     console.log(error);
     res.status(400).json({ message: error?.message ?? "Something went wrong !" });
@@ -147,10 +146,30 @@ const deleteProduct = async (req, res) => {
     res.status(400).json({ message: error?.message ?? "Something went wrong !" });
   }
 }
+
+
+
+const clientGetProducts = async (req, res) => {
+  console.log('clientGetProducts');
+  const { page = 1, limit = 9 } = req.query;
+  console.log('page', page, limit);
+
+  try {
+    const products = await Product.find()
+      .populate('category', 'name')
+      .skip((page - 1) * limit)
+      .limit(Number(limit));
+    const totalProducts = await Product.countDocuments();
+    res.json({ products, totalPages: Math.ceil(totalProducts / limit), currentPage: Number(page) });
+  } catch (error) {
+    res.status(500).json({ error: 'Server Error' });
+  }
+}
 module.exports = {
   getProducts,
   getProductById,
   updateProduct,
   addProduct,
   deleteProduct,
+  clientGetProducts
 }

@@ -38,11 +38,11 @@ const deleteCategory = async (req, res) => {
   try {
     const id = req.query.id;
 
-    const productsWithCategory = await Product.find({ category: id }); // Find products with the given category ID
+    const productsWithCategory = await Product.find({ category: id }); 
     
     if (productsWithCategory.length === 0) {
       const category = await Category.findById(id);
-      const data = await Category.deleteOne({ _id: id }); // Delete the category
+      const data = await Category.deleteOne({ _id: id }); 
       if (category.image) {
         fs.unlink(`public/uploads/${category.image}`, (err) => {
           if (err) {
