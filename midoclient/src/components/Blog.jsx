@@ -1,8 +1,6 @@
-import React from 'react';
-import { Box, Container, Grid, Typography, Card, CardContent, CardMedia, Button, Avatar, Chip, useTheme ,useMediaQuery} from '@mui/material';
+import { Box, Card, CardContent, CardMedia, Chip, Container, Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { styled } from '@mui/system';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
-import PersonIcon from '@mui/icons-material/Person';
+import React from 'react';
 
 const StyledBox = styled(Box)(({ theme }) => ({
   backgroundColor: '#f8e9e8', // Light gold background
@@ -43,7 +41,7 @@ const blogs = [
     title: 'Discovering the Art of Sleep',
     image: 'platinum.png',
     content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non turpis quis felis tempor bibendum. Maecenas id lectus quis mauris dictum fermentum. Nulla facilisi. Nullam hendrerit lacinia felis id elementum.',
+      'Sleep is a crucial part of our daily lives, yet many of us struggle to achieve quality rest. Discovering the art of sleep involves understanding the science behind sleep cycles, the impact of a good mattress, and the role of a calming bedtime routine. By optimizing these factors, you can enhance your sleep quality and wake up feeling refreshed.',
     author: 'John Doe',
     date: 'May 15, 2023',
     readTime: '5 min read',
@@ -54,13 +52,14 @@ const blogs = [
     title: 'Benefits of Orthopedic Mattresses',
     image: 'medicare.png',
     content:
-      'Sed fringilla, enim vel tincidunt interdum, libero libero elementum lacus, at egestas mi nisl in purus. Proin sit amet purus non justo maximus consequat. Fusce condimentum ligula a lacinia rutrum.',
+      'Orthopedic mattresses are designed to support your body and alleviate pressure points, making them ideal for those with back pain or joint issues. These mattresses distribute weight evenly, promote proper spinal alignment, and enhance overall sleep quality. Investing in an orthopedic mattress can lead to a healthier, more restful sleep experience.',
     author: 'Jane Smith',
     date: 'May 20, 2023',
     readTime: '7 min read',
     tags: ['Orthopedic', 'Mattress'],
   },
 ];
+
 
 const Blog = () => {
     const theme = useTheme();
@@ -81,7 +80,7 @@ const Blog = () => {
                 />
                 <CardContent sx={{ flexGrow: 1, position: 'relative' }}>
                   <Box sx={{ position: 'absolute', top: -30, left: 16, display: 'flex', alignItems: 'center', color: 'white' }}>
-                    <Avatar sx={{ bgcolor: '#C9A45C', mr: 1 }}><PersonIcon /></Avatar>
+                    {/* <Avatar sx={{ bgcolor: '#C9A45C', mr: 1 }}><PersonIcon /></Avatar> */}
                     {/* <Typography variant="subtitle2">{blog.author}</Typography> */}
                   </Box>
                   <Typography variant="h5" component="h2" gutterBottom sx={{ mt: 2, fontWeight: 'bold', color: '#333333' }}>
@@ -91,11 +90,11 @@ const Blog = () => {
                     {blog.content}
                   </Typography>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 2 }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    {/* <Box sx={{ display: 'flex', alignItems: 'center' }}>
                       <AccessTimeIcon sx={{ fontSize: 16, mr: 0.5, color: '#C9A45C' }} />
                       <Typography variant="caption" color="text.secondary">{blog.readTime}</Typography>
-                    </Box>
-                    <Typography variant="caption" color="text.secondary">{blog.date}</Typography>
+                    </Box> */}
+                    {/* <Typography variant="caption" color="text.secondary">{blog.date}</Typography> */}
                   </Box>
                   <Box sx={{ mt: 2 }}>
                     {blog.tags.map((tag, index) => (
@@ -103,9 +102,9 @@ const Blog = () => {
                     ))}
                   </Box>
                 </CardContent>
-                <Button variant="text" sx={{ alignSelf: 'flex-start', ml: 2, mb: 2, color: '#ED1C24' }}>
+                {/* <Button variant="text" sx={{ alignSelf: 'flex-start', ml: 2, mb: 2, color: '#ED1C24' }}>
                   Read More
-                </Button>
+                </Button> */}
               </StyledCard>
             </Grid>
           ))}

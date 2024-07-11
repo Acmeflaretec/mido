@@ -44,6 +44,17 @@ const NavBar = () => {
             <ListItemText primary={item.name} sx={{ color: '#333' }} />
           </ListItem>
         ))}
+        <Box sx={{ display: 'flex', gap: 2 }}>
+                <IconButton sx={{ color: 'blue' }} component="a" href="https://www.facebook.com/profile.php?id=61561312774416&mibextid=ZbWKwL" target="_blank">
+                  <FacebookIcon />
+                </IconButton>
+                <IconButton sx={{ color: 'red' }} component="a" href="https://www.instagram.com/mido_mattress?igsh=MXhlOWR0N2V2MHl6Mg==" target="_blank">
+                  <InstagramIcon />
+                </IconButton>
+                {/* <IconButton sx={{ color: '#FFFFFF' }} component="a" href="https://twitter.com" target="_blank">
+                  <TwitterIcon />
+                </IconButton> */}
+              </Box>
       </List>
     </Box>
   );
@@ -100,15 +111,15 @@ const NavBar = () => {
             )}
             {!isMobile && (
               <Box sx={{ display: 'flex', gap: 2 }}>
-                <IconButton sx={{ color: '#FFFFFF' }} component="a" href="https://facebook.com" target="_blank">
+                <IconButton sx={{ color: '#FFFFFF' }} component="a" href="https://www.facebook.com/profile.php?id=61561312774416&mibextid=ZbWKwL" target="_blank">
                   <FacebookIcon />
                 </IconButton>
-                <IconButton sx={{ color: '#FFFFFF' }} component="a" href="https://instagram.com" target="_blank">
+                <IconButton sx={{ color: '#FFFFFF' }} component="a" href="https://www.instagram.com/mido_mattress?igsh=MXhlOWR0N2V2MHl6Mg==" target="_blank">
                   <InstagramIcon />
                 </IconButton>
-                <IconButton sx={{ color: '#FFFFFF' }} component="a" href="https://twitter.com" target="_blank">
+                {/* <IconButton sx={{ color: '#FFFFFF' }} component="a" href="https://twitter.com" target="_blank">
                   <TwitterIcon />
-                </IconButton>
+                </IconButton> */}
               </Box>
             )}
           </Toolbar>

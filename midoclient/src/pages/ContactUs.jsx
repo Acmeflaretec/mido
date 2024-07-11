@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Button, Card, CardContent, Container, Grid, TextField, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 import NavBar from '../components/NavBar';
@@ -44,7 +44,30 @@ const CustomButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-function ContactUs() {
+const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { name, email, message } = formData;
+    const whatsappNumber = "9995256666";
+    const whatsappMessage = `Name: ${name}\n, Email: ${email}\n, Message: ${message}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <div>
       <NavBar />
@@ -56,14 +79,40 @@ function ContactUs() {
           <Grid item xs={12} md={6}>
             <StyledCard>
               <CardContent>
-                <Typography variant="h5" component="h2" gutterBottom style={{ borderBottom: '3px solid #D2232A', paddingBottom: '10px', marginBottom:'20px' }}>
+                <Typography variant="h5" component="h2" gutterBottom style={{ borderBottom: '3px solid #D2232A', paddingBottom: '10px', marginBottom: '20px' }}>
                   Get in Touch
                 </Typography>
-                <FormBox>
-                  <TextField label="Name" variant="outlined" fullWidth style={{ marginBottom: '15px' }} />
-                  <TextField label="Email" variant="outlined" fullWidth style={{ marginBottom: '15px' }} />
-                  <TextField label="Message" variant="outlined" multiline rows={4} fullWidth style={{ marginBottom: '15px' }} />
-                  <CustomButton variant="contained" fullWidth>
+                <FormBox component="form" onSubmit={handleSubmit}>
+                  <TextField 
+                    label="Name" 
+                    variant="outlined" 
+                    fullWidth 
+                    style={{ marginBottom: '15px' }} 
+                    name="name" 
+                    value={formData.name} 
+                    onChange={handleChange}
+                  />
+                  <TextField 
+                    label="Email" 
+                    variant="outlined" 
+                    fullWidth 
+                    style={{ marginBottom: '15px' }} 
+                    name="email" 
+                    value={formData.email} 
+                    onChange={handleChange}
+                  />
+                  <TextField 
+                    label="Message" 
+                    variant="outlined" 
+                    multiline 
+                    rows={4} 
+                    fullWidth 
+                    style={{ marginBottom: '15px' }} 
+                    name="message" 
+                    value={formData.message} 
+                    onChange={handleChange}
+                  />
+                  <CustomButton variant="contained" fullWidth type="submit">
                     Send Message
                   </CustomButton>
                 </FormBox>
@@ -73,12 +122,12 @@ function ContactUs() {
           <Grid item xs={12} md={6}>
             <StyledCard>
               <CardContent>
-                <Typography variant="h5" component="h2" gutterBottom style={{ borderBottom: '3px solid #D2232A', paddingBottom: '10px', marginBottom:'20px' }}>
+                <Typography variant="h5" component="h2" gutterBottom style={{ borderBottom: '3px solid #D2232A', paddingBottom: '10px', marginBottom: '20px' }}>
                   Contact Information
                 </Typography>
                 <ContactInfoBox>
                   <Typography variant="body1" paragraph>
-                    <strong>Address:</strong> Jaihind General Trading Company <br /> malappuram,kerala india- 679582
+                    <strong>Address:</strong> Jaihind General Trading Company <br /> Malappuram, Kerala, India - 679582
                   </Typography>
                   <Typography variant="body1" paragraph>
                     <strong>Phone:</strong> +91 9048256666

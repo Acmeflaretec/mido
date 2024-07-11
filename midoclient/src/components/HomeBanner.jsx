@@ -174,7 +174,7 @@ const HomeBanner = () => {
                 },
               }}
             >
-              Dream in Comfort
+              Dreams are made here
             </Typography>
             <Typography
               variant={isMobile ? 'body1' : 'h5'}
