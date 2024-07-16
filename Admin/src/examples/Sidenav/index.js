@@ -13,6 +13,7 @@ import SidenavItem from "examples/Sidenav/SidenavItem";
 import SidenavFooter from "examples/Sidenav/SidenavFooter";
 import SidenavRoot from "examples/Sidenav/SidenavRoot";
 import sidenavLogoLabel from "examples/Sidenav/styles/sidenav";
+import image from 'assets/images/logo.png'
 
 import { useController, setMiniSidenav } from "context";
 
@@ -109,7 +110,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
         </Box>
         <Box component={NavLink} to="/" display="flex" alignItems="center">
           {brand && (
-            <Box component="img" src={brand} alt=" Logo" width="2rem" mr={0.25} />
+            <Box component="img" src={image} alt=" Logo" width="2rem" mr={0.25} />
           )}
           <Box
             width={!brandName && "100%"}
