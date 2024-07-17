@@ -26,7 +26,7 @@ const Products = () => {
 
   const handleEnquire = (product) => {
     const message = encodeURIComponent(`Hi, I'm interested in the ${product.name}. Can you provide more information?`);
-    window.open(`https://wa.me/9995256666?text=${message}`, '_blank');
+    window.open(`https://wa.me/919995256666?text=${message}`, '_blank');
   };
 
   const handleChangePage = (event, value) => {

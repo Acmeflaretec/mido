@@ -70,9 +70,9 @@ import Table from "examples/Tables/Table";
 import { Icon } from "@mui/material";
 import { Link } from "react-router-dom";
 
-function Category({ image, name, desc }) {
+function Category({ image, name, desc, id }) {
   return (
-    <Box display="flex" alignItems="center" px={1} py={0.5}>
+    <Box component={Link} display="flex" alignItems="center" px={1} py={0.5} to={`/category/editCategory/${id}`}>
       <Box mr={2}>
         <Avatar src={image} alt={name} size="sm" variant="rounded" />
       </Box>
@@ -99,7 +99,7 @@ const TableData = () => {
   ]
 console.log('data',data);
   const rows = data?.data?.map(item => ({
-    category: <Category image={`${process.env.REACT_APP_API_URL}/uploads/${item?.image}`} name={item?.name} desc={item?.desc} />,
+    category: <Category image={`${process.env.REACT_APP_API_URL}/uploads/${item?.image}`} name={item?.name} desc={item?.desc} id={item?._id}/>,
     status: (
       <Badge variant="gradient" badgeContent={item?.isAvailable ? 'Available' : 'Unavailable'} color={item?.isAvailable ? "success" : 'secondary'} size="xs" container />
     ),

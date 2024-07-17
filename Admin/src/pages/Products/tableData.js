@@ -13,9 +13,9 @@ import EditIcon from '@mui/icons-material/Edit';
 import {useDeleteProduct} from 'queries/ProductQuery'
 
 const notify = () => toast.success('category deleted successfully.');
-function Author({ image, name, desc }) {
+function Author({ image, name, desc, id }) {
   return (
-    <Box display="flex" alignItems="center" px={1} py={0.5}>
+    <Box component={Link} to={`/products/editProduct/${id}`} display="flex" alignItems="center" px={1} py={0.5}>
       <Box mr={2}>
         <Avatar src={image} alt={name} size="sm" variant="rounded" />
       </Box>
@@ -65,7 +65,7 @@ const TableData = () => {
   ]
 
   const rows = data?.data?.map(item => ({
-    product: <Author image={`${process.env.REACT_APP_API_URL}/uploads/${item?.image?.[0]}`} name={item?.name} desc={item?.subheading} />,
+    product: <Author image={`${process.env.REACT_APP_API_URL}/uploads/${item?.image?.[0]}`} name={item?.name} desc={item?.subheading} id={item?._id}/>,
     brand: (
       <Typography variant="caption" color="secondary" fontWeight="medium">
         {item?.brand}
