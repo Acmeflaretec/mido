@@ -39,7 +39,7 @@ const blogs = [
   {
     id: 1,
     title: 'Discovering the Art of Sleep',
-    image: 'platinum.png',
+    image: 'latest1.png',
     content:
       'Sleep is a crucial part of our daily lives, yet many of us struggle to achieve quality rest. Discovering the art of sleep involves understanding the science behind sleep cycles, the impact of a good mattress, and the role of a calming bedtime routine. By optimizing these factors, you can enhance your sleep quality and wake up feeling refreshed.',
     author: 'John Doe',
@@ -50,7 +50,7 @@ const blogs = [
   {
     id: 2,
     title: 'Benefits of Orthopedic Mattresses',
-    image: 'medicare.png',
+    image: 'latest2.png',
     content:
       'Orthopedic mattresses are designed to support your body and alleviate pressure points, making them ideal for those with back pain or joint issues. These mattresses distribute weight evenly, promote proper spinal alignment, and enhance overall sleep quality. Investing in an orthopedic mattress can lead to a healthier, more restful sleep experience.',
     author: 'Jane Smith',

@@ -29,17 +29,17 @@ const Special = () => {
     {
       title: 'Innovative Design',
       description: 'Our mattresses feature cutting-edge technology for optimal comfort.',
-      image: 'crystel.png',
+      image: 'special.png',
     },
     {
       title: 'Premium Quality',
       description: 'We use only the finest materials to ensure durability and luxury.',
-      image: 'eurotop.png',
+      image: 'special1.png',
     },
     {
       title: 'Customized Support',
       description: 'Choose from various options to find your perfect level of support.',
-      image: 'platinum.png',
+      image: 'special2.png',
     },
   ];
 

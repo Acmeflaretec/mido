@@ -56,7 +56,7 @@ const HomeAbout = () => {
               }}
             >
               <img
-                src="pillowtop.png" // Updated image path
+                src="whoarewe.png" // Updated image path
                 alt="Company Image"
                 style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '1rem' }}
               />
