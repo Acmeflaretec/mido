@@ -7,7 +7,6 @@ const productSchema = new mongoose.Schema({
     },
     subheading: {
         type: String,
-        required: true
     },
     category: {
         type: mongoose.Schema.Types.ObjectId,
@@ -27,7 +26,6 @@ const productSchema = new mongoose.Schema({
     },
     price: {
         type: Number,
-        required: true
     },
     type1: {
         type: Number
@@ -40,15 +38,12 @@ const productSchema = new mongoose.Schema({
     },
     stock: {
         type: Number,
-        required: true
     },
     discount: {
         type: Number,
-        required: true
     },
     sale_rate: {
         type: Number,
-        required: true
     },
     image: {
         type: Array,
