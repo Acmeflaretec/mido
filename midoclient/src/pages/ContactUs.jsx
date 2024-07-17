@@ -64,7 +64,7 @@ const ContactUs = () => {
     const { name, email, message } = formData;
     const whatsappNumber = "9995256666";
     const whatsappMessage = `Name: ${name}\n, Email: ${email}\n, Message: ${message}`;
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=91${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`;
     window.open(whatsappUrl, '_blank');
   };
 
