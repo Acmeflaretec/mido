@@ -3,12 +3,12 @@ const Category = require('../models/category')
 
 const getProducts = async (req, res) => {
   try {
-    const { page = 1, limit = 6, sortField, sortOrder, search, category,
+    const { page = 1, limit = 100, sortField, sortOrder, search, category,
       priceGreaterThan, priceLessThan, priceMin, priceMax, sortDiscount, sortDiscountGreaterThan } = req.query;
 
 
     const pageNumber = parseInt(page, 10) || 1;
-    const limitNumber = parseInt(limit, 10) || 10;
+    const limitNumber = parseInt(limit, 10) || 100;
     console.log('lim n', limitNumber)
 
     // Construct the base query
