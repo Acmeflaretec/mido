@@ -12,7 +12,7 @@ const DropZone = ({ dispatch }) => {
     myDropzone = new Dropzone('#my-dropzone', {
       url: `${process.env.REACT_APP_API_URL}/api/v1/category`, // Replace with the actual upload URL
       paramName: 'file', // The name to use for the file upload
-      acceptedFiles: '.png',
+      acceptedFiles: 'image/*',
       accept: function (file, done) {
         if (file.size === 0) {
           done('Folder uploads are not allowed. Please select individual files.');
